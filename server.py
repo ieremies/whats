@@ -7,10 +7,14 @@ Fonte: https://www.techwithtim.net/tutorials/python-online-game-tutorial/server
 
 import socket
 from _thread import *
+from sys import argv
 
 # Lembre de pegar essas informações usando o comando ipconfig
 # O valor que queremos está em IPv4 Adress. . . . . . . . . .
-server = "192.168.0.109"  # COLOQUE AQUI SEU IP
+if len(argv) > 1:
+    server = argv[1]
+else:
+    server = "192.168.0.109"  # COLOQUE AQUI SEU IP
 port = 5555  # número da porta
 
 # Cria um objeto do tipo Socket
@@ -56,7 +60,7 @@ def threaded_client(connection):
 def receiver():
     # Começamos a escutar mensagens no socket!
     s.listen()
-    print(f"Waiting for a connection at {ip_address}:{port}")
+    print(f"Waiting for a connection at {server}:{port}")
 
     # Escuta por qualquer solicitação de conexão no socket
     while True:
