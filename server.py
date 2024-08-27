@@ -8,14 +8,9 @@ Fonte: https://www.techwithtim.net/tutorials/python-online-game-tutorial/server
 import socket
 from _thread import *
 
-# Get current IP
-hostname = socket.gethostname()
-ip_address = socket.gethostbyname(hostname)
-print("Your Computer IP Address is:", ip_address)
-
 # Lembre de pegar essas informações usando o comando ipconfig
 # O valor que queremos está em IPv4 Adress. . . . . . . . . .
-server = ip_address  # COLOQUE AQUI SEU IP
+server = "192.168.0.109"  # COLOQUE AQUI SEU IP
 port = 5555  # número da porta
 
 # Cria um objeto do tipo Socket
